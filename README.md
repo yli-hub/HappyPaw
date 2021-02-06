@@ -1,2 +1,1 @@
-# HappyPaw
- Online Shopping Store
+https://yli-hub.github.io/HappyPaw/
