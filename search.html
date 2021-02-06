@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--header-->
+<head>
+    <title>Welcome to Happy Paw</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
+</head>
+<!--end of header-->
+<!--begin of body-->
+<body>
+<!--    Navigation bar-->
+    <header class="header">
+        <nav class="navbar navbar-light navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"></a>
+                    <a class="active" aria-activedescendant="" href="index.html">
+                        <img class="logo" src="image/logo.png">
+                    </a>
+                </div>
+                <div ckass="collapse nav-bar-collapse" id="micon"></div>
+                <ul class="nav navbar-nav navbar-right mynav">
+                    <li class="active">
+                        <a href="index.html" style="margin-top: 15px; color: saddlebrown">Home</a>
+                    </li>
+                    <li class="active">
+                        <a href="fordog.html" style="margin-top: 15px; color: saddlebrown">For Dog</a>
+                    </li>
+                    <li class="active">
+                        <a href="forcat.html" style="margin-top: 15px; color: saddlebrown">For Cat</a>
+                    </li>
+                    <li class="active">
+                        <a href="ContactUs.html" style="margin-top: 15px; color: saddlebrown">Contact Us</a>
+                    </li>
+                    <!-- user login button -->
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user" style="margin-top: 15px; color: saddlebrown"></span>
+                        </a>
+                    </li>
+                    <!-- shopping cart button -->
+                    <li>
+                        <a href="" style="color: saddlebrown">
+                            <span class="glyphicon glyphicon-shopping-cart" style="margin-top: 16px; color: saddlebrown">
+                            </span> Cart
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--        end or navigation-->
+    </header>
+    <!--    end of header-->
+<!--    begin of main body content-->
+    <main class="main" style="margin-top: 70px">
+        <div class="title" style="background-color: #cacca7">
+            <br>
+            <h1 style="font-size:40px; text-align: center; margin-top: 20px; color: saddlebrown">Find what you are looking for ?</h1>
+            <br>
+        </div>
+<!--        another search bar on product page-->
+        <form class="filter" id="search_box" action="search.html" method="GET" style="text-align: center">
+            <input type="text" placeholder="What else you need to bring home   ^_*" name="search" style="width:500px; height:40px; margin-top: 40px; border-radius: 5px; border: none; margin-bottom: 20px; text-align: center">
+<!--            search button-->
+            <button type="submit" style="font-size: 25px; border: none; background-color: transparent; border-radius: 5px; color: saddlebrown">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+        <div class="row" style="margin-top: 10px">
+				<!--            filter by price dropdown button-->
+				<div class="col-sm-2" style="float:left; margin-left: 50px">
+					<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: saddlebrown; color: white; border: none">Filter
+							by Price
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<input class="form-control" id="filterinput1" type="text" placeholder="Search.." onchange="monitor(1)">
+								<li><a href="#" onclick="onPrice('Price',0,10)">Less than $10</a></li>
+								<li><a href="#" onclick="onPrice('Price',10,20)">$10 to $20</a></li>
+								<li><a href="#" onclick="onPrice('Price',20,30)">$20 to $30</a></li>
+								<li><a href="#" onclick="onPrice('Price',30,50)">$30 to $50</a></li>
+								<li><a href="#" onclick="onPrice('Price',50,100)">$50 to $100</a></li>
+								<li><a href="#" onclick="onPrice('Price',100,999999)">Over $100</a></li>
+							</ul>
+					</div>
+				</div>
+				<!--            filter by catagory dropdown button-->
+				<div class="col-sm-2" style="float:center; margin-left:-90px">
+					<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+						 style="background-color: saddlebrown; color: white; border: none">Filter
+							by Catagory
+							<span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<input class="form-control" id="filterinput2" type="text" placeholder="Search.." onchange="monitor(2)">
+							<li><a href="#" onclick="onCatagory('Catagory','Dog Lover')">Dog Lover</a></li>
+							<li><a href="#" onclick="onCatagory('Catagory','Cat Lover')">Cat Lover</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--            filter by rating dropdown button-->
+				<div class="col-sm-2" style="float:center; margin-left:-70px">
+					<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+						 style="background-color: saddlebrown; color: white; border: none">Filter
+							by Rating
+							<span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<input class="form-control" id="filterinput3" type="text" placeholder="Search.." onchange="monitor(3)">
+							<li><a href="#" onclick="onRating('Rating',5)">5 Stars</a></li>
+							<li><a href="#" onclick="onRating('Rating',4)">4 Stars</a></li>
+							<li><a href="#" onclick="onRating('Rating',3)">3 Stars</a></li>
+							<li><a href="#" onclick="onRating('Rating',2)">2 Stars</a></li>
+							<li><a href="#" onclick="onRating('Rating',1)">1 Stars</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--            sort by dropdown button-->
+				<div class="col-sm-2" style="float:right; margin-right: 45px">
+					<div class="sortby" style="float:right; height:20px; margin-top:5px; margin-bottom: 5px">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+						 aria-haspopup="true" aria-expanded="true" style="background-color: saddlebrown; color: white; border: none">
+							Sort By: Featured
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#" onclick="onSort('rating', 'h2l')">Featured</a></li>
+							<li><a href="#" onclick="onSort('price', 'l2h')">Price: Low to High</a></li>
+							<li><a href="#" onclick="onSort('price', 'h2l')">Price: High to Low</a></li>
+							<li><a href="#" onclick="onSort('rating', 'l2h')">Rating: Low to High</a></li>
+							<li><a href="#" onclick="onSort('rating', 'h2l')">Rating: High to Low</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+<!--        list of all products with price and ratings-->
+<div id="product-list">
+</div>
+    </main>
+<!--    end of main body content-->
+<!-- Footer -->
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-2">
+                    <h4> Happy Paw </h4>
+                </div>
+                <div class="col-lg-3 col-sm-2 col-xs-2">
+                    <h3> Contact </h3>
+                    <ul>
+                        <li>
+                            <a class="email" href="" style="margin-left: 0"> happypaw666@happypaw.ca </a>
+                        </li>
+                        <br />
+                        <li>
+                            <p> 354 Richmond Road, Ottawa, ON K2A 0E8 </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-2 col-xs-3">
+                    <ul>
+                        <li>
+                            <h5> 
+                                <a href="fordog.html" style="margin-top: 5em"> FOR DOG</a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="forcat.html"> FOR CAT</a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="ContactUs.html"> CONTACT US </a>
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+<!--/.footer-bottom-->
+</footer>
+    <script src="./image/https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./image/https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/productlist.js"></script>
+    <script src="js/search.js"></script>
+<!--end of body -->
+</body>
+</html>
